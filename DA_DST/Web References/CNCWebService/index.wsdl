@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DevAdd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevAddResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDevs">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDevsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDevsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataRead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataReadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="D" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataUpdateResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DevAddSoapIn">
+    <wsdl:part name="parameters" element="tns:DevAdd" />
+  </wsdl:message>
+  <wsdl:message name="DevAddSoapOut">
+    <wsdl:part name="parameters" element="tns:DevAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDevsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDevs" />
+  </wsdl:message>
+  <wsdl:message name="GetDevsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDevsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataReadSoapIn">
+    <wsdl:part name="parameters" element="tns:DataRead" />
+  </wsdl:message>
+  <wsdl:message name="DataReadSoapOut">
+    <wsdl:part name="parameters" element="tns:DataReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="DataUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:DataUpdate" />
+  </wsdl:message>
+  <wsdl:message name="DataUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:DataUpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="indexSoap">
+    <wsdl:operation name="DevAdd">
+      <wsdl:input message="tns:DevAddSoapIn" />
+      <wsdl:output message="tns:DevAddSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDevs">
+      <wsdl:input message="tns:GetDevsSoapIn" />
+      <wsdl:output message="tns:GetDevsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataRead">
+      <wsdl:input message="tns:DataReadSoapIn" />
+      <wsdl:output message="tns:DataReadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DataUpdate">
+      <wsdl:input message="tns:DataUpdateSoapIn" />
+      <wsdl:output message="tns:DataUpdateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="indexSoap" type="tns:indexSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DevAdd">
+      <soap:operation soapAction="http://tempuri.org/DevAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevs">
+      <soap:operation soapAction="http://tempuri.org/GetDevs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataRead">
+      <soap:operation soapAction="http://tempuri.org/DataRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataUpdate">
+      <soap:operation soapAction="http://tempuri.org/DataUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="indexSoap12" type="tns:indexSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DevAdd">
+      <soap12:operation soapAction="http://tempuri.org/DevAdd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevs">
+      <soap12:operation soapAction="http://tempuri.org/GetDevs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataRead">
+      <soap12:operation soapAction="http://tempuri.org/DataRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataUpdate">
+      <soap12:operation soapAction="http://tempuri.org/DataUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="index">
+    <wsdl:port name="indexSoap" binding="tns:indexSoap">
+      <soap:address location="http://192.168.168.239:800/index.asmx" />
+    </wsdl:port>
+    <wsdl:port name="indexSoap12" binding="tns:indexSoap12">
+      <soap12:address location="http://192.168.168.239:800/index.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

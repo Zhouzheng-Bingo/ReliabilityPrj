@@ -1,0 +1,12 @@
+-- Create the user 
+create user LM04
+  identified by Aa1234
+  default tablespace CNC
+  temporary tablespace TEMP
+  quota unlimited on users;
+-- Grant/Revoke role privileges 
+grant connect to LM04;
+grant resource to LM04;
+grant dba to LM04;
+-- Grant/Revoke system privileges 
+grant unlimited tablespace to LM04;

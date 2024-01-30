@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<ServerConfig>
+    <NetConfig LocalIp="192.168.2.123" Port="10001" />
+    <CPUCoreConfig CoreUse="0x01" />
+    <IntervalConfig Interval="300" />
+    <CommConfig MaxConn="20" MaxThread="20" />
+    <RegConfig>
+        <RegX startNo="0" endNo="511" />
+        <RegY startNo="0" endNo="511" />
+        <RegR startNo="0" endNo="2047" />
+        <RegF startNo="0" endNo="3727" />
+        <RegG startNo="0" endNo="3727" />
+        <RegB startNo="0" endNo="1721" />
+        <RegW startNo="0" endNo="255" />
+        <RegD startNo="0" endNo="255" />
+        <RegI startNo="0" endNo="127" />
+        <RegQ startNo="0" endNo="127" />
+        <RegK startNo="0" endNo="127" />
+        <RegT startNo="0" endNo="511" />
+        <RegC startNo="0" endNo="511" />
+    </RegConfig>
+    <VarConfig>
+        <VarAxis startNo="0" endNo="3199" />
+        <VarChan startNo="0" endNo="7999" />
+        <VarSys startNo="0" endNo="9999" />
+    </VarConfig>
+    <MacVarConfig>
+        <MacVar startNo="500" endNo="999" />
+        <MacVar startNo="50000" endNo="54999" />
+    </MacVarConfig>
+</ServerConfig>
